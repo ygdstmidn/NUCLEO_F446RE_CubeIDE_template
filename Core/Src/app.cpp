@@ -9,12 +9,14 @@ extern "C"
 
     extern UART_HandleTypeDef huart2;
 
+    // MARK:setup
     void user_setup(void)
     {
         setbuf(stdout, NULL);
         printf("Hello World!!\n");
     }
 
+    // MARK:loop
     void user_loop(void)
     {
         const uint32_t now = HAL_GetTick();
@@ -27,6 +29,7 @@ extern "C"
         }
     }
 
+    // MARK:_write (for printf)
     int _write(int file, char *ptr, int len)
     {
         HAL_UART_Transmit(&huart2, (uint8_t *)ptr, len, 10);
