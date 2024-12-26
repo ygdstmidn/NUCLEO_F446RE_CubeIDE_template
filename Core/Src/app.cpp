@@ -17,6 +17,14 @@ extern "C"
 
     void user_loop(void)
     {
+        const uint32_t now = HAL_GetTick();
+        static uint32_t pre = now;
+
+        if (now - pre >= 1000)
+        {
+            printf("now,%lu\n", now);
+            pre = now;
+        }
     }
 
     int _write(int file, char *ptr, int len)
