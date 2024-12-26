@@ -1,12 +1,14 @@
 {
     "ignorePaths": [
-        "**/main.c"
+        "**/main.cpp"
     ],
     "words": [
+        "cproject",
         "GPIOA",
         "GPIOB",
         "GPIOC",
         "huart",
+        "NUCLEO",
         "USART"
     ]
 }
