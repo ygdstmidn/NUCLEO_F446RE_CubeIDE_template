@@ -1,17 +1,18 @@
 # NUCLEO_F446RE_CubeIDE_template
 ## 概要
-NUCLEO_F446REのCubeIDEのテンプレートプロジェクトです．
-GitHubのテンプレート機能を使って，新しいプロジェクトを作成した後，scripts内のrenameProject.pyを実行することで，iocファイルの名前等を変更することができます．
+NUCLEO_F446REのCubeIDEのテンプレートプロジェクトです．\
+GitHubのテンプレート機能を使って，新しいプロジェクトを作成した後，Scripts内のrenameProject.pyを実行することで，iocファイルの名前等を変更することができます．\
+>[!NOTE]
+>↑この概要は新しいプロジェクト作成後に削除し，新しくプロジェクトの概要を記述してください．\
+>また，ファイル先頭のプロジェクト名の部分も変更してください
 
 | 項目         | 仕様              |
 | ------------ | ----------------- |
 | 使用マイコン | NUCLEO_F446RE     |
-| 使用IDE      | CubeIDE           |
+| 使用IDE      | CubeIDE,VSCode    |
 | 使用言語     | C++，STM32CubeHAL |
 
 ## 今後の目標
-pythonでプロジェクト名変更処理を行う\
-app.cppの実現
 
 ## 何を実現できたのか
 
@@ -29,3 +30,9 @@ app.cppの実現
 ## 変更した設定
 
 ## プログラム概要
+### setup()
+Hello WorldとPCに送信
+### loop()
+now = HAL_GetTick()
+#### 1秒ごとに
+現在の経過時間をPCに送信
