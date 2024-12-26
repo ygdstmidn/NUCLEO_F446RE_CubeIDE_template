@@ -1,0 +1,12 @@
+{
+    "ignorePaths": [
+        "**/main.c"
+    ],
+    "words": [
+        "GPIOA",
+        "GPIOB",
+        "GPIOC",
+        "huart",
+        "USART"
+    ]
+}
