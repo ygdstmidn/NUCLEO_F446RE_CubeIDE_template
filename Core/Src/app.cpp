@@ -22,13 +22,22 @@ extern "C"
         const uint32_t now = HAL_GetTick();
         static uint32_t pre = now;
 
-        if (now - pre >= 100)
+        if (now - pre >= 10)
         {
-            if (HAL_GPIO_ReadPin(DebugButton_GPIO_Port, DebugButton_Pin) == GPIO_PIN_SET)
+
+            static int count = 0;
+            count++;
+            if (count >= 10)
             {
-                HAL_GPIO_TogglePin(DebugLED_GPIO_Port, DebugLED_Pin);
+                if (HAL_GPIO_ReadPin(DebugButton_GPIO_Port, DebugButton_Pin) == GPIO_PIN_SET)
+                {
+                    HAL_GPIO_TogglePin(DebugLED_GPIO_Port, DebugLED_Pin);
+                }
+                printf("now,%lu\n", now);
+
+                count = 0;
             }
-            printf("now,%lu\n", now);
+
             pre = now;
         }
     }
