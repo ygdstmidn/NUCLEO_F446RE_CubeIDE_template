@@ -24,6 +24,9 @@ GitHubのテンプレート機能を使って，新しいプロジェクトを�
 |      |      |      |
 
 ## 変更した設定
+### Project Manager
+Code Generator, Generated files\
+✅Generate peripheral initialization as a pair of '.c/.h' files per peripheral
 
 ## プログラム概要
 ### setup()
