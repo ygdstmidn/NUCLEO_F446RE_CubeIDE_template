@@ -12,6 +12,7 @@ def main():
     rename_file(
         "../" + LAST_PROJECT_NAME + ".ioc", "../" + projectName + ".ioc"
     )  # *.iocファイルの名前を変更する
+    rename_iocFile(projectName)  # *.iocファイルのプロジェクト名を変更する
     delete_Files()  # .launchファイル，Debugフォルダ，Releaseフォルダを削除する(実は.gitignoreで外しているので不要かも)
 
 
@@ -57,6 +58,19 @@ def rename_file(old_name, new_name):
         print(f"File {old_name} not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
+
+def rename_iocFile(projectName):
+    iocFile = open("../" + projectName + ".ioc", "r")
+    iocFileData = iocFile.read()
+    iocFile.close()
+
+    iocFileData = iocFileData.replace(LAST_PROJECT_NAME, projectName)
+
+    iocFile = open("../" + projectName + ".ioc", "w")
+    iocFile.write(iocFileData)
+    iocFile.close()
+    print("Project Name changed in .ioc file")
 
 
 def delete_Files():
