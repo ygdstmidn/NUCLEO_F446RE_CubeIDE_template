@@ -1,13 +1,14 @@
 // main code here!!
 
+#include <main.h>
+#include <usart.h>
+#include <gpio.h>
+#include <stdio.h>
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
-#include "main.h"
-#include "usart.h"
-#include "gpio.h"
 
     // MARK:setup
     void user_setup(void)
@@ -24,7 +25,6 @@ extern "C"
 
         if (now - pre >= 10)
         {
-
             static int count = 0;
             count++;
             if (count >= 10)
@@ -43,9 +43,9 @@ extern "C"
     }
 
     // MARK:_write (for printf)
-    int _write(int file, char *ptr, int len)
+    int _write(int file, char* ptr, int len)
     {
-        HAL_UART_Transmit(&huart2, (uint8_t *)ptr, len, 10);
+        HAL_UART_Transmit(&huart2, (uint8_t*)ptr, len, 10);
         return len;
     }
 
