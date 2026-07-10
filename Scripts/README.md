@@ -5,6 +5,8 @@ GitHubのテンプレート機能を使って新しいプロジェクトを作�
 - .projectファイル内のプロジェクト名を変更します
 - .cprojectファイル内のプロジェクト名を変更します
 - *.iocファイルの名前を変更します
+- *.iocファイル内のプロジェクト名を変更します
+- README.mdファイル内のプロジェクト名を変更します
 - *.launchファイル，Debugディレクトリ，Releaseディレクトリを削除します
 
 [参考文献](https://tekuteku-embedded.xyz/2023/03/15/stm32cubeide-copy/)
