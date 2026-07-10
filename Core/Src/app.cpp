@@ -1,13 +1,13 @@
 // main code here!!
 
+#include "main.h"
+#include "usart.h"
+#include "gpio.h"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
-#include "main.h"
-#include "usart.h"
-#include "gpio.h"
 
     // MARK:setup
     void user_setup(void)
