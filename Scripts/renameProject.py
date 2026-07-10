@@ -26,26 +26,26 @@ def get_projectName():
 
 
 def rename_projectFile(projectName):
-    projectFile = open("../.project", "r")
+    projectFile = open("../.project", "r", encoding="utf-8")
     projectFileData = projectFile.read()
     projectFile.close()
 
     projectFileData = projectFileData.replace(LAST_PROJECT_NAME, projectName)
 
-    projectFile = open("../.project", "w")
+    projectFile = open("../.project", "w", encoding="utf-8")
     projectFile.write(projectFileData)
     projectFile.close()
     print("Project Name changed in .project file")
 
 
 def rename_cprojectFile(projectName):
-    projectFile = open("../.cproject", "r")
+    projectFile = open("../.cproject", "r", encoding="utf-8")
     projectFileData = projectFile.read()
     projectFile.close()
 
     projectFileData = projectFileData.replace(LAST_PROJECT_NAME, projectName)
 
-    projectFile = open("../.cproject", "w")
+    projectFile = open("../.cproject", "w", encoding="utf-8")
     projectFile.write(projectFileData)
     projectFile.close()
     print("Project Name changed in .cproject file")
@@ -62,26 +62,26 @@ def rename_file(old_name, new_name):
 
 
 def rename_iocFile(projectName):
-    iocFile = open("../" + projectName + ".ioc", "r")
+    iocFile = open("../" + projectName + ".ioc", "r", encoding="utf-8")
     iocFileData = iocFile.read()
     iocFile.close()
 
     iocFileData = iocFileData.replace(LAST_PROJECT_NAME, projectName)
 
-    iocFile = open("../" + projectName + ".ioc", "w")
+    iocFile = open("../" + projectName + ".ioc", "w", encoding="utf-8")
     iocFile.write(iocFileData)
     iocFile.close()
     print("Project Name changed in .ioc file")
 
 
 def rename_readmeFile(projectName):
-    readmeFile = open("../README.md", "r")
+    readmeFile = open("../README.md", "r", encoding="utf-8")
     readmeFileData = readmeFile.read()
     readmeFile.close()
 
     readmeFileData = readmeFileData.replace(LAST_PROJECT_NAME, projectName)
 
-    readmeFile = open("../README.md", "w")
+    readmeFile = open("../README.md", "w", encoding="utf-8")
     readmeFile.write(readmeFileData)
     readmeFile.close()
     print("Project Name changed in README.md file")
