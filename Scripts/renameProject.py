@@ -13,6 +13,7 @@ def main():
         "../" + LAST_PROJECT_NAME + ".ioc", "../" + projectName + ".ioc"
     )  # *.iocファイルの名前を変更する
     rename_iocFile(projectName)  # *.iocファイルのプロジェクト名を変更する
+    rename_readmeFile(projectName)  # README.mdファイルのプロジェクト名を変更する
     delete_Files()  # .launchファイル，Debugフォルダ，Releaseフォルダを削除する(実は.gitignoreで外しているので不要かも)
 
 
@@ -71,6 +72,19 @@ def rename_iocFile(projectName):
     iocFile.write(iocFileData)
     iocFile.close()
     print("Project Name changed in .ioc file")
+
+
+def rename_readmeFile(projectName):
+    readmeFile = open("../README.md", "r")
+    readmeFileData = readmeFile.read()
+    readmeFile.close()
+
+    readmeFileData = readmeFileData.replace(LAST_PROJECT_NAME, projectName)
+
+    readmeFile = open("../README.md", "w")
+    readmeFile.write(readmeFileData)
+    readmeFile.close()
+    print("Project Name changed in README.md file")
 
 
 def delete_Files():
